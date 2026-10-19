@@ -11,7 +11,24 @@ Video / motion / presentation skills for AI agents — extracted from the source
 
 ---
 
-## Install into another agent
+## Clone this kit
+
+```bash
+gh repo clone ChromeGenesis/hyperframes-skills                      # with the GitHub CLI
+git clone https://github.com/ChromeGenesis/hyperframes-skills.git   # needs a PAT as the password
+```
+
+**Private repo** — on a fresh machine you need credentials first:
+
+```bash
+gh auth login                       # GitHub CLI: browser login, then `gh repo clone ...` just works
+# or with a personal access token (scope: repo):
+git clone https://<TOKEN>@github.com/ChromeGenesis/hyperframes-skills.git
+```
+
+Windows: `winget install GitHub.cli` then `gh auth login` then `gh repo clone ChromeGenesis/hyperframes-skills`.
+
+---
 
 ```bash
 ./install-to-agent.sh opencode      # -> ~/.config/opencode/skills

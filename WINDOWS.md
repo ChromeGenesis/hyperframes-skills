@@ -8,9 +8,26 @@ winget.
 
 ---
 
-## 1. Install the skills into your agent
+## 1. Clone and install the skills into your agent
 
-Unzip anywhere, then from the unzipped folder:
+On the Windows PC:
+
+```powershell
+# 1. install the GitHub CLI and sign in (private repo)
+winget install GitHub.cli
+gh auth login
+gh repo clone ChromeGenesis/hyperframes-skills
+cd hyperframes-skills
+```
+
+If you'd rather not install `gh`, use a personal access token (scope `repo`):
+
+```powershell
+git clone https://<TOKEN>@github.com/ChromeGenesis/hyperframes-skills.git
+cd hyperframes-skills
+```
+
+Then pick your agent and run the installer from the cloned folder:
 
 ```powershell
 # pick your agent
