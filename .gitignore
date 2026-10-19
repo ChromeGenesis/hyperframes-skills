@@ -1,0 +1,10 @@
+.DS_Store
+__MACOSX/
+*.zip
+*.dmg
+node_modules/
+.hf-tmp/
+renders/
+frames/
+*.mp4
+!skills/**/assets/**/*.mp4
