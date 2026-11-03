@@ -5,7 +5,11 @@ Video / motion / presentation skills for AI agents — extracted from the source
 - **Origin:** `heygen-com/hyperframes` (Apache-2.0), `nexu-io/open-design` (bundled catalog), `emilkowalski/skills` (MIT), `slidevjs/slidev` (MIT)
 - **Copied from:** `~/.config/opencode/skills/` (installed globally, live in OpenCode right now)
 - **Count:** 134 skills, 32 MB
-- **License:** free/open-source. The **skills** are free. Some *providers* they call (fal.ai, venice.ai, Sora, HeyGen TTS) need a paid API key — see "Needs a key" below.
+- **License:** MIT for the kit's own glue (installers, docs, indexes) — see
+  [LICENSE](LICENSE). Bundled skill content keeps its upstream licenses —
+  see [ATTRIBUTION.md](ATTRIBUTION.md). Some *providers* the skills call
+  (fal.ai, venice.ai, Sora, HeyGen TTS) need a paid API key — see "Needs a
+  key" below.
 - **Windows?** Same folder, same skills. Use `install-to-agent.ps1` and read **WINDOWS.md** — the toolchain is
   *easier* on Windows (no macOS 12 Chrome ceiling, FFmpeg via winget).
 
@@ -15,15 +19,7 @@ Video / motion / presentation skills for AI agents — extracted from the source
 
 ```bash
 gh repo clone ChromeGenesis/hyperframes-skills                      # with the GitHub CLI
-git clone https://github.com/ChromeGenesis/hyperframes-skills.git   # needs a PAT as the password
-```
-
-**Private repo** — on a fresh machine you need credentials first:
-
-```bash
-gh auth login                       # GitHub CLI: browser login, then `gh repo clone ...` just works
-# or with a personal access token (scope: repo):
-git clone https://<TOKEN>@github.com/ChromeGenesis/hyperframes-skills.git
+git clone https://github.com/ChromeGenesis/hyperframes-skills.git  # or plain git
 ```
 
 Windows: `winget install GitHub.cli` then `gh auth login` then `gh repo clone ChromeGenesis/hyperframes-skills`.
@@ -51,7 +47,7 @@ Or point an agent at this folder directly (OpenCode `opencode.json`):
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
-  "skills": ["/Users/o2cfx/Desktop/Genesis/Hyperframes/skills"]
+  "skills": ["<path-to-this-repo>/skills"]
 }
 ```
 
@@ -121,3 +117,9 @@ official one-liner is `npx skills add https://fframes.studio`.
 - `hf-blocks/*` are nested one level deep on purpose — OpenCode derives the skill ID from the folder holding `SKILL.md`, so `hf-blocks/orbit-card/SKILL.md` registers as `orbit-card`.
 - The `metadata: internal: true` you may see in the HeyGen house-style skills is Claude Code metadata; OpenCode ignores it.
 - Update procedure: the source clones are `~/hyperframes-src` (HeyGen) and `~/open-design-src` (OpenDesign). `git pull` in each, re-copy the `skills/` dirs, and re-run the install script.
+
+---
+
+## License
+
+MIT for this kit's own glue — see [LICENSE](LICENSE). Bundled skill content keeps its upstream licenses — see [ATTRIBUTION.md](ATTRIBUTION.md).
